@@ -1,0 +1,87 @@
+#header {
+  padding: 0 40px;
+  padding-top: 16px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid #616166;
+  background: #252528;
+  z-index: 9999;
+  transition: all 0.2s linear;
+  &.hidden {
+    transform: translateY(-100%);
+  }
+  &.header-scroll {
+    padding-top: 0;
+    .logo {
+      opacity: 0;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    padding: 0 16px;
+    padding-top: 16px;
+  }
+  .header-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    position: relative;
+    max-width: 1347px;
+    margin: 0 auto;
+  }
+  .left {
+    .btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .btn {
+    height: 40px;
+  }
+  .logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white, #fbfbfb);
+    text-align: right;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    transition: all 0.3s linear;
+  }
+  .right {
+    display: flex;
+    gap: 24px;
+    .btn {
+      min-width: 113px;
+    }
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  .header-burger {
+    display: none;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: var(
+      --Linear,
+      linear-gradient(180deg, #7a0004 0%, #ba0007 100%)
+    );
+    &:hover {
+      background: linear-gradient(180deg, #b00107 0%, #ea020b 100%);
+    }
+    @media screen and (max-width: 768px) {
+      display: flex;
+    }
+  }
+}
