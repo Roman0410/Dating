@@ -4,6 +4,14 @@ Fancybox.bind("[data-fancybox]", {
 $(".beforeAfter  .slide").twentytwenty();
 //__________________________HEADER__________________________//
 
+$(".burger-menu").click(function () {
+  $(".header-menu").toggleClass("open");
+});
+
+$(".header-menu .close").click(function () {
+  $(".header-menu").removeClass("open");
+});
+
 $(window).scroll(function () {
   let header = $(".header");
   let scrollPosition = $(window).scrollTop();
@@ -18,6 +26,20 @@ $(window).scroll(function () {
 $(".user-image .arrow, .likes .btn").on("click", function (event) {
   event.preventDefault();
   event.stopPropagation();
+});
+
+//__________________________SLIDERS__________________________//
+
+$(".img-slider").each(function () {
+  var $slider = $(this);
+  var $parent = $slider.closest(".user-image");
+
+  $slider.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: $parent.find(".prev"),
+    nextArrow: $parent.find(".next"),
+  });
 });
 
 //_____________________SIGN-UP_LOG-IN______________________//
@@ -123,25 +145,11 @@ const enableSubmitButton = (form) => {
     input.addEventListener("input", checkInputs);
   });
 
-  checkInputs(); // Initial check
+  checkInputs();
 };
 
 enableSubmitButton(document.querySelector(".signUP-card form"));
 enableSubmitButton(document.querySelector(".logIN-card form"));
 enableSubmitButton(document.querySelector(".resetPassword-card form"));
-
-//__________________________SLIDERS__________________________//
-
-$(".img-slider").each(function () {
-  var $slider = $(this);
-  var $parent = $slider.closest(".user-image");
-
-  $slider.slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    prevArrow: $parent.find(".prev"),
-    nextArrow: $parent.find(".next"),
-  });
-});
 
 //_____________________________FORM_____________________________//

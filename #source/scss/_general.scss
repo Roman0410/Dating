@@ -125,3 +125,15 @@ input {
   font-size: 14px;
   margin-top: 5px;
 }
+
+.red {
+  background: var(--Linear, linear-gradient(180deg, #7a0004 0%, #ba0007 100%));
+  &:hover {
+    background: linear-gradient(180deg, #b00107 0%, #ea020b 100%);
+  }
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
