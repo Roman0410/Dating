@@ -88,42 +88,10 @@ section {
 }
 
 input {
-  width: 100%;
-  padding: 16px 12px;
-  color: #000000;
-  font-size: 14px;
-  font-style: normal;
-  line-height: 110.5%;
-  border-radius: 12px;
-  background: #fff;
   border: none;
-  &:focus,
-  &:active {
-    outline: 1px solid var(--Linear, #7a0004);
+  &.error {
+    background: #8c4444 !important;
   }
-  &::placeholder {
-    font-family: inherit;
-    color: #a1a8ad;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 110%;
-  }
-  &.just-validate-error-field {
-    outline: 1px solid red;
-    &:focus {
-      box-shadow: 0px 0px 7px 0px rgba(255, 0, 0, 0.562);
-    }
-  }
-  &.just-validate-success-field {
-    outline: 2px solid rgb(0, 182, 0);
-  }
-}
-
-.just-validate-error-label {
-  color: red !important;
-  font-size: 14px;
-  margin-top: 5px;
 }
 
 .red {

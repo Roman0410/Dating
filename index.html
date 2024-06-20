@@ -9,6 +9,10 @@
   </head>
   <body>
     <header class="header" id="header">
+      <a href="#" class="advertising-banner">
+        <img src="./img/adv.jpg" alt="" />
+        <p>www.nazarbazar.com</p>
+      </a>
       <div class="header-body">
         <div class="left">
           <a href="index.html" class="btn red">
@@ -402,6 +406,7 @@
               placeholder="Email"
               required
             />
+            <div class="error-text">The Email is required</div>
           </div>
           <div class="input-group">
             <label for="password">Enter password</label>
@@ -412,6 +417,7 @@
               placeholder="Password"
               required
             />
+            <div class="error-text">The password is required</div>
             <div type="button" class="show-password">
               <img src="./img/mdi_eye-outline.svg" alt="" />
             </div>
@@ -490,6 +496,14 @@
         </div>
         <p>Send code again <span id="countdown">01:00</span></p>
       </div> -->
+    </div>
+    <div class="advertising-wrapper">
+      <a href="#" class="advertising-popup"
+        ><img src="./img/adv.jpg" alt=""
+      /></a>
+      <div class="advertising-close-timer btn red flex disabled">
+        Close <span class="timer">5</span>
+      </div>
     </div>
   </body>
 </html>

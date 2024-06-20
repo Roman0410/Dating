@@ -12,15 +12,6 @@ $(".header-menu .close").click(function () {
   $(".header-menu").removeClass("open");
 });
 
-$(window).scroll(function () {
-  let header = $(".header");
-  let scrollPosition = $(window).scrollTop();
-  if (scrollPosition > 100) {
-    header.addClass("header-scroll");
-  } else {
-    header.removeClass("header-scroll");
-  }
-});
 //__________________________USERS__________________________//
 
 $(".user-image .arrow, .likes .btn").on("click", function (event) {
@@ -152,4 +143,32 @@ enableSubmitButton(document.querySelector(".signUP-card form"));
 enableSubmitButton(document.querySelector(".logIN-card form"));
 enableSubmitButton(document.querySelector(".resetPassword-card form"));
 
-//_____________________________FORM_____________________________//
+//__________________________ADVERTISING_________________________//
+
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(function () {
+    let popup = document.querySelector(".advertising-wrapper");
+    let closeButton = document.querySelector(".advertising-close-timer");
+    let timerSpan = closeButton.querySelector(".timer");
+    let countdown = 5;
+
+    popup.classList.add("show");
+
+    let timerInterval = setInterval(function () {
+      countdown--;
+      timerSpan.textContent = countdown;
+
+      if (countdown === 0) {
+        clearInterval(timerInterval);
+        closeButton.classList.remove("disabled");
+        closeButton.classList.add("enabled");
+      }
+    }, 1000);
+
+    closeButton.addEventListener("click", function () {
+      if (countdown === 0) {
+        popup.classList.remove("show");
+      }
+    });
+  }, 5000);
+});
